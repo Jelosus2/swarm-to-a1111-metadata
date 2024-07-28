@@ -1,0 +1,6 @@
+tests
+venv
+lib/__pycache__
+desktop.ini
+test.py
+*.json
