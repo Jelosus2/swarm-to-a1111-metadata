@@ -1,6 +1,6 @@
 tests
 venv
-lib/__pycache__
-desktop.ini
+__pycache__/
+*.ini
 test.py
 *.json

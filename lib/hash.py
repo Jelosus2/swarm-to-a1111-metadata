@@ -17,7 +17,7 @@ def generate_hash(file_path, cache) -> str:
 
   if cache:
     try:
-      with open(cache_path, "r") as cache_file:
+      with open(cache_path, "r", encoding="utf-8") as cache_file:
         cache_obj = json.load(cache_file)
 
       if cache_obj.get(filename.stem):
@@ -56,8 +56,8 @@ def lora_hash_generation(lora_list, lora_folder, cache) -> str:
   lora_hashes = ' Lora hashes: "'
 
   for index, lora in enumerate(lora_list):
-    parsed_lora = lora.split("/")[-1]
-    matching_loras = [file for ext in (f"{parsed_lora}.safetensors", f"{lora}.ckpt") for file in lora_dir.glob(ext)]
+    lora_name = lora.split("/")[-1]
+    matching_loras = [file for ext in (f"{lora_name}.safetensors", f"{lora_name}.ckpt") for file in lora_dir.rglob(ext)]
 
     if len(matching_loras) > 0:
       if index == len(lora_list) - 1:
@@ -78,7 +78,7 @@ def model_hash_generation(model, model_folder, cache) -> str:
   model_name = model.split("/")[-1]
   model_dir = Path(model_folder)
 
-  matching_checkpoint = [file for ext in (f"{model_name}.safetensors", f"{model_name}.ckpt") for file in model_dir.glob(ext)]
+  matching_checkpoint = [file for ext in (f"{model_name}.safetensors", f"{model_name}.ckpt") for file in model_dir.rglob(ext)]
 
   if len(matching_checkpoint) == 0:
     print("No Checkpoint in the specified CheckpointFolder path matched the metadata, please check again.")

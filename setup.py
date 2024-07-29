@@ -1,7 +1,7 @@
 from pathlib import Path
 from lib import hash
 import subprocess
-import json
+import main
 import sys
 
 def setup_config():
@@ -48,7 +48,6 @@ def setup_config():
   else:
     hash.generate_cache_file()
 
-  with open("config.json", "w") as config_file:
-    json.dump(config_obj, config_file, indent=2)
+  main.generate_config_file(config_obj)
 
 setup_config()
