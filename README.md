@@ -46,6 +46,9 @@ After that let all install and fill the inputs, then you can run it by executing
 Once all the setup is complete you can run the respective run file (`run.bat` for Windows and `run.sh` for Linux) and a file explorer dialog will open. Select the directory where you store the images you want to convert and let the script do it's magic.
 
 ## Changelog
+- July 31, 2024:
+  - Fixed cache file generation when you don't want to use the cache system while your using the setup file.
+  - Minor code refactoring.
 - July 29, 2024:
   - Search for resources such as LoRAs and Checkpoints recursively as I didn't know you can have subfolders inside the Lora or Stable-Diffusion folders.
   - Error handling for when the config file is failed to get decoded.

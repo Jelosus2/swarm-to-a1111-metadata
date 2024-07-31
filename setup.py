@@ -46,7 +46,8 @@ def setup_config():
     if regenerate_cache == "y":
       hash.generate_cache_file()
   else:
-    hash.generate_cache_file()
+    if cache == "y":
+      hash.generate_cache_file()
 
   main.generate_config_file(config_obj)
 

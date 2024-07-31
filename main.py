@@ -49,7 +49,7 @@ def change_image_metadata(image_dir, config):
         model = image_params["model"]
         version = image_params["swarm_version"]
 
-        model_hash = hash.model_hash_generation(image_params["model"], config.get("CheckpointFolder", ""), config.get("Cache", False))
+        model_hash = hash.model_hash_generation(model, config.get("CheckpointFolder", ""), config.get("Cache", False))
         lora_hashes = hash.lora_hash_generation(image_params.get("loras", []), config.get("LoraFolder", ""), config.get("Cache", False))
 
         if model_hash == "no-checkpoint" or lora_hashes == "no-lora":
