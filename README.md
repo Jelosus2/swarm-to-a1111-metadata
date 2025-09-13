@@ -2,6 +2,8 @@
 
 Scripts for SwarmUI metadata conversion to A1111 metadata (mostly used for Civitai to automatically detect the resources). If you find a bug, you have some problem or you want to request a feature please open an Issue.
 
+> This repository gets archived in favor of using the [SwarmUI extension](https://github.com/Jelosus2/ImgMetadataConverter) instead.
+
 ## Table of Content
 - [Installation](#installation)
   - [Windows](#windows)
